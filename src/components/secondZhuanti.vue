@@ -8,19 +8,24 @@
      </div>
      <div class="chayou">{{ $t("message.zhuantititle") }}</div>
     </div>
-    <div class="video" >
-        <swiper :options="swiperOption" ref="mySwiper">
-          <!-- slides -->
-          <swiper-slide  v-for="(list,index) in lists"><img :src="list.com"></swiper-slide>
-           
-          <!-- Optional controls -->
-          <div class="swiper-pagination"  slot="pagination"></div>
-          <div class="swiper-button-prev" slot="button-prev"></div>
-          <div class="swiper-button-next" slot="button-next"></div>
-          <div class="swiper-scrollbar"   slot="scrollbar"></div>
-        </swiper>
-
-         
+    <div class="video" >     
+          <div class="box01">
+            <div>{{ $t("message.zhuantititle") }}</div>
+            <img src="../assets/threeth/box01.png" />      
+          </div>
+          <div class="box02">
+            <div>
+              <ul>
+                <el-row :gutter="20">
+                <el-col :span="6" v-for="(list,index) in datas" :class="[{no:only==index},{no:only2==index}]">
+                  <router-link :to="{path:'/FourLevelPage',query:{id:list.id}}">
+                      <img :src="msgurl.getimg+list.bigPic" /><p>{{list.title}}</p>
+                  </router-link>
+                </el-col>
+                </el-row>
+              </ul>
+            </div>
+          </div> 
     </div>
      
     <back></back>
@@ -33,47 +38,11 @@ export default {
   data () {
     return {      
       lists:[
-            {
-              "com":require('../assets/zhuanti/01.png')
-             },{
-              "com":require('../assets/zhuanti/02.png')                 
-             },{
-              "com":require('../assets/zhuanti/03.png')                        
-             },{
-              "com":require('../assets/zhuanti/01.png')                        
-             },{
-              "com":require('../assets/zhuanti/02.png')                        
-             },{
-              "com":require('../assets/zhuanti/03.png')                        
-             }],
+      ],
       
       only:2,
       msg: 'Welcome to Your Vue.js App',
-       swiperOption: {//以下配置不懂的，可以去swiper官网看api，链接http://www.swiper.com.cn/api/
-          // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，
-          //也就意味着你可以在第一时间获取到swiper对象，<br>　horizontal　　　　　　　假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
-          notNextTick: true,
-         effect : 'coverflow',
-          slidesPerView: 3,
-          centeredSlides: true,
-          
-         loop : true,
-          autoplay: true,
-          direction : 'horizontal',
-          grabCursor : true,
-          setWrapperSize :true,
-          autoHeight: true,
-          pagination : '.swiper-pagination',
-          paginationClickable :true,
-          prevButton:'.swiper-button-prev',//上一张
-          nextButton:'.swiper-button-next',//下一张
-          scrollbar:'.swiper-scrollbar',//滚动条
-          mousewheelControl : true,
-          observeParents:true,
-          // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
-          debugger: true,
-        }
-    }
+      }
   },
   methods:{
     zhankaiFun:function(index){
@@ -88,24 +57,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.logo2{     width: 8.5rem;
-    position: absolute;
-    top: 50%;
-    left: 24%;
-    transform: translate(-100%, -50%);
-     animation: huajuanL 2s;
-      animation-timing-function: ease-in; 
-      }
-.logo2 img{width: 8.5rem; height: auto}
-.huanjuan{ width: 8.5rem;
-    position: absolute;
-    top: 50%;
-    right: 24%;
-    transform: translate(100%, -50%);
-    animation: huajuanR 2s;
-    animation-timing-function: ease-in;
-   }
-.huanjuan img{width: 8.5rem; height: auto}
+
 .video{width: 74rem;
     height: 31rem;
     position: absolute;
@@ -113,52 +65,45 @@ export default {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    padding: 1rem;
    overflow: hidden;
    animation: vid 2s;
    animation-timing-function:cubic-bezier(0.45,0.35,0.20,0.00);
+   background: url(../assets/threeth/bg.png) no-repeat center;background-size: 100% 100%;
       }
-.video>div{
-  float: left;
-}
-.video .huanjuan01{
-  width: 5rem;
-  margin-right: 2rem;
-  height: 31rem;
-  position: relative;
-}
-.video .huanjuan01 div{
-  float: left;
-}
 
-.swiper-container{width: 74rem;
-    height: 31rem;}
-
-.swiper-container img{width: 42rem;
-    height: auto;}
-
-
-
-
-
-
-
-
-.video .special .huanjuan01-boxL{
-  position: relative;
-  left:  0rem;
- 
-}
-
-
-
-.laoziniu{width: 20rem;
+.video .box01{width: 74rem;height: 5rem;position: relative}
+.video .box01 img{width: 15rem;
+    height: 3rem;
     position: absolute;
-    top: 79%;
-    right: -9%;
+    top: 50%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    animation: laoziniu 2s;}
-.laoziniu img{width: 20rem;}
+    z-index: -1}
+.video .box01>div{
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
+.video .box02{width: 74rem;height: 26rem;position: relative}
+.video .box02>div{width:70rem;height: 22rem;margin: 2rem;;overflow: hidden}
+.video ul{width:70rem;height: 22rem;    padding-right: 18px;
+margin-left: 9px;overflow-y: scroll;
+overflow-x: hidden;}
+.video ul .el-col{text-align: center;line-height: 6rem;font-size: 1rem;
+position: relative;margin-bottom: 1rem;}
+.video .box02 ul img{width:16rem;height: 9rem;}
+.video .box02 ul p{width:16rem;height: 2rem;line-height: 2rem;text-align: center; position: absolute;bottom: 0;
+left: 50%;
+transform: translate(-50%, -0%);
+font-size: 0.8rem;background: #000;color: #fff}
+
+
+
+
 
 .ind-box{margin: 1rem}
 .ind-box>div{transform:rotate(0deg);width: 5rem;
@@ -209,12 +154,7 @@ animation-timing-function: linear;
 
 
 
-@keyframes laoziniu{
-0%   { right:-57%; }
-90% {right:-9.1%;}
-95% {right:-8.9%;}
-100% {right:-9%;}
-}
+
 @keyframes retreat{
 0%   { top:10rem; }
 90% {top:-0.01rem;}
@@ -225,16 +165,5 @@ animation-timing-function: linear;
 0%   { transform:rotate(0deg); }
 100% {transform:rotate(-360deg);}
 }
-@keyframes huanjuanBg{
-0%   { width: 3rem; }
-100% { width: 40rem;}
-}
-@keyframes huanjuanL{
-0%   { left: 18rem; }
-100% { left: 0rem;}
-}
-@keyframes huanjuanR{
-0%   { width: 0rem; }
-100% { widows: 55rem;}
-}
+
 </style>

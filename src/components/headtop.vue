@@ -1,16 +1,30 @@
 <template>
   <div class="hello">
      <!-- <img src="../assets/bj.jpg">  -->
-    <div class="logo"><img src="../assets/logo.png"></div>
+    <div class="logo">    
+      <div><img  class="logoImg" src="../assets/logo.png"></div>
+    </div>
     <div class="list">
-      <ul>
+       <el-dropdown trigger="click">
+          <span class="el-dropdown-link qie-li">
+            {{xianshi}}<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item  v-for="(list,index) in zhonglei" @click.native="qiehuanFun(index),yuyan(index)">
+              <router-link to="/">{{list}}</router-link>
+            </el-dropdown-item>
+            
+          </el-dropdown-menu>
+        </el-dropdown>
+      <!-- <ul>
         <router-link to="/">
         <li v-for="(list,index) in zhonglei" 
          :class="{ yuzhong:qiehuan == index}" 
          @click="qiehuanFun(index),yuyan(index)">{{list}}</li>
        </router-link>
-      </ul>
+      </ul> -->
     </div>
+    
     
   </div>
 </template>
@@ -24,7 +38,8 @@ export default {
       qiehuan:0,
       only:3,
       only2:7,
-      yy:['Chinese','English','ry','hy']
+      yy:['Chinese','English','ry','hy'],
+      xianshi:'中文'
     }
   },
   mounted () { 
@@ -37,8 +52,11 @@ export default {
     }
   },
   methods:{
-    qiehuanFun:function(index){
+    qiehuanFun:function(index){  
+       //alert(index)
           this.qiehuan = index;
+          this.xianshi =this.zhonglei[index] ;
+         
           sessionStorage.setItem('qiehuan', this.qiehuan) 
     },
     yuyan:function(index){
@@ -50,13 +68,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.logo img{position: absolute;
+.logo{width: 15.6rem;height: 7rem;
+  position: absolute;
           left: 50%;
-          transform: translate(-50%, -0%);
+          transform: translate(-50%, -0%);}
+.logo>div{float: left;width: 15.6rem;height: 7rem;
           }
-.list{width:32rem;height: 6rem;float: right}
-.list ul{width:32rem;height: 6rem}
-.list ul li{width:8rem;height: 6rem;float: left;text-align: center;line-height: 6rem;font-size: 1rem}
+.logo>div .logoImg{
+float: left;width: auto;height: 7rem;
+margin-top: 0rem;
+          }
+.list{width: 5rem;
+    margin: 2.5rem 3rem;
+    height: 2rem;
+    float: right;
+    font-size: 1.2rem;}
+/* .list .qie-li{width:32rem;height: 6rem;display: block} */
+.list .qie-li{width: 6rem;
+    text-align: center;
+    font-size: 1rem;
+    display: block;background: url(../assets/dian.png) no-repeat center;background-size: 100% auto;color: #fff}
 .list ul .yuzhong{background: url(../assets/dian.png) no-repeat center;background-size: 100% auto;color: #fff}
 .logo2{     width: 8.5rem;
     position: absolute;

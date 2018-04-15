@@ -1,8 +1,10 @@
 <template>
   <div class="hello">
      <!-- <img src="../assets/bj.jpg">  -->
-   
-   
+     <Shortcut></Shortcut>
+      <service></service>
+      <erweima></erweima>
+      <Qualifications></Qualifications>
      <div class="logo2"><img src="../assets/logo2.png"></div>
       <div class="video">
         <!-- <img src="../assets/video.png"> -->
@@ -25,19 +27,23 @@
                  @ready="playerReadied">
          </video-player>
       </div>
-    <div class="list2">
+    <div class="list2">    
       <ul>
-        <li ><router-link to="/secondRenwen"><img src="../assets/list01.png"></router-link></li>
-        <li><router-link to="/secondLevel"><img src="../assets/list03.png"></router-link></li>
-        <li><router-link to="/secondXianshang"><img src="../assets/list04.png"></router-link></li>
-        <li><router-link to="/secondGanzhi"><img src="../assets/list02.png"></router-link></li>
-        <li><router-link to="/secondZhuanti"><img src="../assets/list05.png"></router-link></li>
+        <li ><router-link to="/secondRenwen"><p>{{ $t("message.renwentitle") }}</p></router-link></li>
+        <li><router-link to="/secondLevel"><p>{{ $t("message.changyoutitle") }}</p></router-link></li>
+        <li><router-link to="/secondXianshang"><p>{{ $t("message.xianshangtitle") }}</p></router-link></li>
+        <li><router-link to="/secondGanzhi"><p>{{ $t("message.ganzhititle") }}</p></router-link></li>
+        <li><router-link to="/secondZhuanti"><p>{{ $t("message.zhuantititle") }}</p></router-link></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import Shortcut from '@/components/Shortcut'
+import service from '@/components/service'
+import erweima from '@/components/erweima'
+import Qualifications from '@/components/Qualifications'
 export default {
   name: 'HelloWorld',
   data () {
@@ -56,6 +62,7 @@ export default {
       }
     }
   },
+  components:{'Shortcut':Shortcut,'service':service,'erweima':erweima,'Qualifications':Qualifications},
   mounted() {
       console.log('this is current player instance object', this.player)
     },
@@ -109,9 +116,12 @@ export default {
       }
 .video>div{width: 23rem; height: 13rem}
 #vjs_video_593{width: 23rem; height: 13rem}
-.list2{width:96rem;height: 12rem;float: right; position: absolute;
+.list2{width:96rem;height: 12rem; position: absolute;
 bottom: 0;background: url(../assets/xian.png) no-repeat;background-position:0 70%;background-size: 100%;}
-.list2 ul{width:50rem;height: 6rem;margin: 0 auto;}
-.list2 ul li{width:10rem;height: 6rem;float: left;text-align: center;line-height: 6rem;font-size: 1rem}
-.list2 ul li img{width:7rem;height: auto;}
+.list2 ul{width:50rem;height: 8rem;margin: 0 auto;}
+.list2 ul li{width:8rem;height: 8rem;float: left;text-align: center;line-height: 6rem;font-size: 1.5rem;
+background: url(../assets/index-tb.png) no-repeat;background-size: 100% 100%;margin-left: 1.66rem}
+ .list2 ul li p{width:8rem;height: 8rem;line-height: 8rem;color: #fbd8a1;
+ text-shadow:0 0 0.2em #000,
+-0 -0 0.2em hsl(46, 74%, 47%);} 
 </style>

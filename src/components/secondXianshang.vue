@@ -65,7 +65,16 @@ export default {
     zhankaiFun:function(index){
           this.zhangkai = index;
     },
-  }
+  },
+  mounted() {
+            //var params = new URLSearchParams()
+            //params.append('params', "首页")
+             //console.log(this.$route.query.id);
+             if(this.$route.query.id){
+               this.zhangkai = this.$route.query.id
+             }
+            var This = this;
+    }
 }
 </script>
 

@@ -2,13 +2,13 @@ module.exports = {
     message: {
         index: 'home',
         back: 'back',
-        renwentitle: 'Human Laoshan',
+        renwentitle: 'Human',
         renwen0: 'Cultural relics',
         renwen1: 'Celebrity culture',
         renwen2: 'Stone tablets',
         renwen3: 'Laoshan legend',
 
-        ganzhititle: 'perceiving Laoshan',
+        ganzhititle: 'perceiving',
         ganzhi0: 'A brief introduction to the sightseeing area',
         ganzhi1: 'Twelve scenery in Laoshan',
         ganzhi2: 'Laoshan odd stone',
@@ -16,7 +16,7 @@ module.exports = {
         ganzhi4: 'four seasons Laoshan',
         ganzhi5: 'Laoshan image',
 
-        changyoutitle: 'swim in Laoshan',
+        changyoutitle: 'swim in',
         changyou0: 'tour route',
         changyou1: 'public facilities',
         changyou2: 'helicopter',
@@ -30,14 +30,14 @@ module.exports = {
         changyou10: 'cruise ship',
         changyou11: 'Laoshan special product',
 
-        xianshangtitle: 'online Laoshan',
+        xianshangtitle: 'online',
         xianshang0: 'ticket booking',
         xianshang1: 'guide book',
         xianshang2: 'scenic spots',
         xianshangsao: 'scavenging',
 
 
-        zhuantititle: 'thematic column',
+        zhuantititle: 'image',
         zhuanti0: 'whole domain tourism',
         zhuanti1: 'ecological Laoshan',
         zhuanti2: 'Laoshan one hundred',

@@ -79,24 +79,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.logo2{     width: 8.5rem;
-    position: absolute;
-    top: 50%;
-    left: 24%;
-    transform: translate(-100%, -50%);
-     animation: huajuanL 2s;
-      animation-timing-function: ease-in; 
-      }
-.logo2 img{width: 8.5rem; height: auto}
-.huanjuan{ width: 8.5rem;
-    position: absolute;
-    top: 50%;
-    right: 24%;
-    transform: translate(100%, -50%);
-    animation: huajuanR 2s;
-    animation-timing-function: ease-in;
-   }
-.huanjuan img{width: 8.5rem; height: auto}
 .video{width: 74rem;
     height: 31rem;
     position: absolute;
@@ -148,17 +130,6 @@ font-size: 0.8rem;background: #000;color: #fff}
 
 
 
-
-
-
-.laoziniu{width: 20rem;
-    position: absolute;
-    top: 79%;
-    right: -9%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    animation: laoziniu 2s;}
-.laoziniu img{width: 20rem;}
 
 .ind-box{margin: 1rem}
 .ind-box>div{transform:rotate(0deg);width: 5rem;
@@ -225,16 +196,5 @@ animation-timing-function: linear;
 0%   { transform:rotate(0deg); }
 100% {transform:rotate(-360deg);}
 }
-@keyframes huanjuanBg{
-0%   { width: 3rem; }
-100% { width: 40rem;}
-}
-@keyframes huanjuanL{
-0%   { left: 18rem; }
-100% { left: 0rem;}
-}
-@keyframes huanjuanR{
-0%   { width: 0rem; }
-100% { widows: 55rem;}
-}
+
 </style>

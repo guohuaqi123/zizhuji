@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div>{{msg}}</div>
       <headtop></headtop>
+     
       <transition name="fade" mode="out-in">
          <router-view v-bind:msgurl='msgurl' />
       </transition>
@@ -23,7 +23,7 @@ export default {
         
     }
   },
-  components:{headtop},
+  components:{'headtop':headtop},
   mounted(){
     var This= this
     function addEventHandler(target,type,fn){

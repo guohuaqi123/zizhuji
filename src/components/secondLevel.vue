@@ -13,7 +13,7 @@
         <img src="../assets/changyoulaoshan/cybj.png">
          <ul>
             <li v-for="(list,index) in lists" :class="[{noly:onlys==index},{noly:onlys2==index},{noly:onlys3==index},{noly:onlys4==index}]"> 
-              <router-link :to="{path:'/threeTu',query:{id:list.name}}"><img :src="list.com"></router-link>
+              <router-link :to="{path:'/threeTu',query:{id:list}}"><p>{{list}}</p></router-link>
             </li>
            
          </ul>
@@ -29,51 +29,29 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      lists:[
-            {
-              "com":require('../assets/changyoulaoshan/cy-01.png'),
-              'name':"游览路线"
-             },{
-              "com":require('../assets/changyoulaoshan/cy-02.png'),
-              'name':"公共设施"                 
-             },{
-              "com":require('../assets/changyoulaoshan/cy-03.png'),
-              'name':"直升机"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-04.png'),
-              'name':"周边交通"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-05.png'),
-              'name':"崂山民宿"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-06.png'),
-              'name':"海滩"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-07.png'),
-              'name':"内部交通"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-08.png'),
-              'name':"索道"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-09.png'),
-              'name':"渔家宴"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-10.png'),
-              'name':"景区地图"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-11.png'),
-              'name':"游船"                        
-             },{
-              "com":require('../assets/changyoulaoshan/cy-12.png'),
-              'name':"崂山特产"                        
-             }
-      ],
+     
       onlys:2,
       onlys2:5,
       onlys3:8,
       onlys4:11
     }
   },
+  computed: {
+    lists: function () {
+      return [this.$t("message.changyou0"),
+      this.$t("message.changyou1"),
+      this.$t("message.changyou2"),
+      this.$t("message.changyou3"),
+      this.$t("message.changyou4"),
+      this.$t("message.changyou5"),
+      this.$t("message.changyou6"),
+      this.$t("message.changyou7"),
+      this.$t("message.changyou8"),
+      this.$t("message.changyou9"),
+      this.$t("message.changyou10"),
+      this.$t("message.changyou11")]
+      }
+   },
   props:["msgurl"],
   methods:{
   }
@@ -99,10 +77,13 @@ export default {
     transform: translate(-50%, -50%);
       }
 .video img{width: 38rem; height: auto}
-.video ul{width: 30rem;position:absolute;top: 0rem;padding:2.5rem 4rem;}
-.video ul li{width: 7rem;margin-right: 4.5rem;float: left}
+.video ul{width: 30rem;position:absolute;top: 0rem;padding:2.5rem 0rem 2.5rem 9rem;}
+.video ul li{width: 7rem;margin-right: 2.5rem;float: left;
+background: url(../assets/changyoulaoshan/ganzhi-tb.png) no-repeat;background-size: 100% 100%;}
 .video ul .noly{margin-right: 0rem;}
-.video ul li img{width: 7rem;}
+.video ul li p{width: 7rem;height: 7rem;font-size: 1rem;line-height: 7rem;text-align: center;color: #fbd8a1;
+ text-shadow:0 0 0.2em #000,
+-0 -0 0.2em hsl(46, 74%, 47%);}
 .laoziniu{ width: 21rem;
     position: absolute;
     top: 73%;

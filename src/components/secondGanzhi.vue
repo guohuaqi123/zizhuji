@@ -30,7 +30,7 @@
              </ul>
            </div>
          </div>
-      </div>
+    </div>
      <div class="logo2"><img src="../assets/ganzhilaoshan/huajuan01.png"></div>
       <div class="huanjuan">
         <img src="../assets/ganzhilaoshan/huajuan02.png">
@@ -48,7 +48,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      dt:require('../assets/ganzhilaoshan/ganzhi-ditu.png')
+      dt:require('../assets/ganzhilaoshan/ganzhi-ditu1.jpg')
     }
   },
    computed: {
@@ -83,7 +83,7 @@ export default {
   methods:{
       open5:function(val) {
         var This = this;
-        this.$alert('<img src="'+This.dt+'" />', "地图", {
+        this.$alert('<img style="width: 47rem;height: auto;" src="'+This.dt+'" />', "游览区地图", {
           dangerouslyUseHTMLString: true,
           closeOnClickModal:true,
           center:true
@@ -128,7 +128,7 @@ height: 27rem;
 .video .content{position:absolute;top: 0rem;padding:2.5rem 4rem;width: 50rem;height: 22rem;}
 .video .content>div{float: left;}
 .video .content .content-box01{ width: 5rem;height: 22rem;position: relative;}
-.video .content .content-box01 img{  position: absolute; top: 50%; left: 50%;  transform: translate(-50%, -50%);}
+.video .content .content-box01 img{  position: absolute; top: 50%; left: 50%;  transform: translate(-50%, -50%);width: 3rem;height: 16rem;}
 .video .content .content-box01 p{  position: absolute; top: 50%; left: 50%; 
  transform: translate(-50%, -50%);
  color: #fff;font-size: 0.8rem;

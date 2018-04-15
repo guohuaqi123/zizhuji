@@ -35,7 +35,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {          
-       zhangkai:0,
+      zhangkai:0,
       only:3,
       msg: 'Welcome to Your Vue.js App'
     }
@@ -72,9 +72,11 @@ export default {
   mounted() {
             //var params = new URLSearchParams()
             //params.append('params', "首页")
-             console.log(this.msgurl);
-            var This = this
-
+             //console.log(this.$route.query.id);
+             if(this.$route.query.id){
+               this.zhangkai = this.$route.query.id
+             }
+            var This = this;
     }
 }
 </script>
