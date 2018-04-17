@@ -11,6 +11,7 @@ import secondZhuanti from '@/components/secondZhuanti'
 import threeTu from '@/components/threeTu'
 import threeYoulan from '@/components/threeYoulan'
 import FourLevelPage from '@/components/FourLevelPage'
+import FourLevelPageImg from '@/components/FourLevelPageImg'
 import ElementUI from 'element-ui'
 
 import $ from "jquery";
@@ -74,6 +75,10 @@ export default new Router({
             path: '/FourLevelPage', //四级页
             name: 'FourLevelPage',
             component: FourLevelPage
+        }, {
+            path: '/FourLevelPageImg', //四级页img
+            name: 'FourLevelPageImg',
+            component: FourLevelPageImg
         },
     ]
 })

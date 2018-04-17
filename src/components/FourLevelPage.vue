@@ -11,8 +11,13 @@
     </div>
     <div class="video" >     
       <div class="box01">
-        <img src="../assets/Four/bt-bg.png" />
-        <p>{{datas.title}}</p>
+        <div>
+          <img src="../assets/Four/bt-bg1.png">
+          <p>{{datas.title}}</p> 
+          <img class="rimg" src="../assets/Four/bt-bg3.png">
+           
+        </div>
+         <!-- <img src="../assets/Four/bt-bg.png" /> -->
       </div>
       <div class="box02">
         <div class="box02com">
@@ -20,7 +25,7 @@
             <!-- <div style="float:left; clear: both;" align="center">
         <img src="images/bkjj.jpg" width="120" alt="" hspace="8"><br /> 图像标题
     </div> -->
-            <div class="tp" style="clear: both;" align="center"><img :src="urltp" /></div>
+            <div class="tp" style="clear: both;" align="center"><img :src="urltp" @error='imgerror' /></div>
             <!-- {{datas.content}} -->
            <div><p v-html="datas.content" ></p></div> 
           </div>
@@ -60,7 +65,8 @@ export default {
       only:3,
       only2:7,
       datas: 'Welcome to Your Vue.js App',
-      urltp:''
+      urltp:'',
+      imgurl:'121'
     }
   },
   props:['msgurl'],
@@ -80,6 +86,7 @@ export default {
                 success: function(data) {
                     console.log(data);
                     This.datas= data[0];
+                    This.imgurl=data[0].bigPic;
                     This.urltp=This.msgurl.getimg+data[0].bigPic;
                     //console.log(This.Numbers[This.message]);
                     //This.Nber = This.Numbers.slice(0, 12);
@@ -91,6 +98,14 @@ export default {
     zhankaiFun:function(index){
           this.zhangkai = index;
     },
+    imgerror:function(event){
+      //alert('1:'+event.target.style.display);
+      //alert('2:'+this.imgurl);
+      if(this.imgurl==''){
+        event.target.style.display='none'
+      }
+      
+    }
   }
 }
 </script>
@@ -132,29 +147,32 @@ export default {
 .video .box01{width: 74rem;height: 5rem;position: relative;
 background: url(../assets/Four/bg01.png) no-repeat center;background-size: 100% 100%;
 }
-.video .box01 img{width: 18rem;
+.video .box01>div{
     height: 3rem;
+    line-height: 3rem;
+     font-size: 1.2rem;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);}
-.video .box01 p{width: 18rem;
+    transform: translate(-50%, -50%);
+   }
+.video .box01>div img{float: left;height: 3rem}
+.video .box01>div .rimg{float: right;height: 3rem}
+.video .box01>div p{
+  float: left;
 text-align: center;
 line-height: 3rem;color: #82705d;
     font-size: 1.2rem;
     font-weight: bold;
     height: 3rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);}
+     background: url(../assets/Four/bt-bg2.png) center;background-size:auto 100% ;
+    }
 .video .box02{width: 74rem;height: 22rem;position: relative;
 background: url(../assets/Four/bgz.png) no-repeat center;background-size: 100% 100%;}
 .video .box02 .box02com{width: 66rem;height: 22rem;margin: 0 4rem;overflow: hidden;}
 .video .box02 .box02com1{width: 66rem;height: 22rem;overflow: hidden;
-overflow-y: scroll;overflow-x: hidden;padding-right: 18px;padding-left: 9px;}
+overflow-y: scroll;overflow-x: hidden;padding-right: 18px;padding-left: 9px;font-family:"Microsoft YaHei",'微软雅黑';}
 .video .box02 .box02com1 p{line-height: 1.6rem;font-size: 0.9rem}
 .video .box02 .box02com1 img{width: 50%}
 

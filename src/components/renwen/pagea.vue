@@ -13,7 +13,7 @@
                                 <router-link :to="{path:'/FourLevelPage',query:{id:list.id}}">
                                   <div class="grid-content bg-purple">
                                     &nbsp; • &nbsp;{{list.title}}
-                                    <span>2018-12-11 &nbsp;&nbsp;  </span>
+                                    <span>{{list.datetime}} &nbsp;&nbsp;  </span>
                                     </div>
                                 </router-link>
                               </el-col>
@@ -250,7 +250,7 @@ export default {
                     console.log(data);
                     This.Numbers= data;
                     //console.log(This.Numbers[This.message]);
-                    This.Nber = This.Numbers.slice(0, 12);
+                    This.Nber = This.Numbers.slice(0, 7);
                     This.pages = data.length
                 }
             })
@@ -266,8 +266,8 @@ export default {
         console.log(val);
       },
     currentPage: function(a) {
-                 var b = (a - 1) * 12;
-                 var c = a * 12;
+                 var b = (a - 1) * 7;
+                 var c = a * 7;
                  //alert(b + ':' + c)
                  this.Nber = this.Numbers.slice(b, c)
                  //alert(a)
@@ -362,10 +362,11 @@ top: 50%; left: 50%;  transform: translate(-50%, -50%);font-size: 1.1rem}
 .video .special .bg .content .content-box01 p{  position: absolute; top: 50%; left: 50%;  
 transform: translate(-50%, -50%);color: #fff;font-size: 0.8rem;width:12rem;height: 4rem;line-height: 4rem}
 .kuangzi{width: 35rem;height: 14rem;overflow: hidden}
-.video .special .bg .content .content-box02{ width: 34rem;height: 14rem;overflow-x: auto;padding:1rem;padding-bottom: 0rem;}
+.video .special .bg .content .content-box02{ width: 34rem;height: 14rem;
+overflow-x: auto;padding:1rem;padding-bottom: 0rem;overflow: hidden;}
 .video .special .bg .content .content-box03{ width: 36rem;height: 2rem;display: flex;}
 .content-box03 .el-pagination{margin: 0 auto;align-items: center;justify-content:center;}
-.content-box04{width: 34rem;height: 17rem;overflow:hidden;margin: 0 auto}
+.content-box04{width: 34rem;height: 17rem;overflow:hidden;margin: 0 auto;font-family:"Microsoft YaHei",'微软雅黑';}
 .content-box04>div{width: 34rem;height: 17rem;overflow-y: scroll;overflow-x: hidden;margin: 0 auto;padding-right: 17px;}
 
 .hede{width: 34rem;height: 15rem;}
@@ -414,6 +415,7 @@ transform: translate(-50%, -50%);color: #fff;font-size: 0.8rem;width:12rem;heigh
     background: #fff;
     background-size: 100% 100%;
     line-height: 1.5rem;
+    font-family:"Microsoft YaHei",'微软雅黑';
 
   }
 .grid-content span{

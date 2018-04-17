@@ -13,15 +13,19 @@
          <div class="content">
            <div class="content-box01">
              <img src="../assets/ganzhilaoshan/ganzhi-biaoti.png">
-             <p>{{ $t("message.ganzhititle") }}<p/>
+             <p>{{ $t("message.ganzhi6") }}<p/>
            </div>
            <div class="content-box02"><img  @click="open5('1')" src="../assets/ganzhilaoshan/ganzhi-ditu.png"> </div>
            <div class="content-box03">
              <ul>
-              <li v-for="list in lists">
+              <li v-for="(list,index) in only"  @click="open4('1')">
+                  <p>{{list}}</p>
+              </li>
+              <li v-for="(list,index) in lists">
                  <router-link :to="{path:'/threeTu',query:{id:list}}">
                  <p>{{list}}</p></router-link>
               </li>
+             
                <!-- <li><p>崂山十<br/>二景</p></li>
                <li><p>崂山<br/>奇石</p></li>
                <li><p>古树<br/>银花</p></li>
@@ -52,8 +56,11 @@ export default {
     }
   },
    computed: {
+    only: function () {
+      return [this.$t("message.ganzhi0")]
+      },
     lists: function () {
-      return [this.$t("message.ganzhi0"),
+      return [
       this.$t("message.ganzhi1"),
       this.$t("message.ganzhi2"),
       this.$t("message.ganzhi3"),
@@ -78,12 +85,98 @@ export default {
                     //This.lists= data;
                    
                 }
-            })
+            });
+                // 百度地图API功能
+    var mp = new BMap.Map("map");
+    var point = new BMap.Point(120.593189,36.136978);
+    var point1 = new BMap.Point(120.593189,36.136978);
+    mp.centerAndZoom(point, 15);
+    var marker = new BMap.Marker(point1); // 创建标注
+    mp.addOverlay(marker); // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+    // 复杂的自定义覆盖物
+    function ComplexCustomOverlay(point, text, mouseoverText) {
+        this._point = point;
+        this._text = text;
+        this._overText = mouseoverText;
+    }
+    ComplexCustomOverlay.prototype = new BMap.Overlay();
+    ComplexCustomOverlay.prototype.initialize = function(map) {
+        this._map = map;
+        var div = this._div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+        div.style.backgroundColor = "#EE5D5B";
+        div.style.border = "1px solid #BC3B3A";
+        div.style.color = "white";
+        div.style.height = "18px";
+        div.style.padding = "2px";
+        div.style.borderRadius = "5px";
+        div.style.lineHeight = "18px";
+        div.style.whiteSpace = "nowrap";
+        div.style.MozUserSelect = "none";
+        div.style.fontSize = "12px"
+        var span = this._span = document.createElement("span");
+        div.appendChild(span);
+        span.appendChild(document.createTextNode(this._text));
+        var that = this;
+
+        var arrow = this._arrow = document.createElement("div");
+        arrow.style.background = "url(http://map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png) no-repeat";
+        arrow.style.position = "absolute";
+        arrow.style.width = "11px";
+        arrow.style.height = "10px";
+        arrow.style.top = "22px";
+        arrow.style.left = "10px";
+        arrow.style.overflow = "hidden";
+        div.appendChild(arrow);
+
+        div.onmouseover = function() {
+            this.style.backgroundColor = "#EE5D5B";
+            this.style.borderColor = "#EE5D5B";
+            this.getElementsByTagName("span")[0].innerHTML = that._overText;
+            arrow.style.backgroundPosition = "0px 0px";
+
+        }
+
+        div.onmouseout = function() {
+            this.style.backgroundColor = "#EE5D5B";
+            this.style.borderColor = "#BC3B3A";
+            this.getElementsByTagName("span")[0].innerHTML = that._text;
+            arrow.style.backgroundPosition = "0px 0px";
+        }
+
+        mp.getPanes().labelPane.appendChild(div);
+
+        return div;
+    }
+    ComplexCustomOverlay.prototype.draw = function() {
+        var map = this._map;
+        var pixel = map.pointToOverlayPixel(this._point);
+        this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
+        this._div.style.top = pixel.y - 30 + "px";
+    }
+    var txt = "中国·山东青岛崂山大河东客服中心",
+        mouseoverTxt = txt;
+
+    var myCompOverlay = new ComplexCustomOverlay(new BMap.Point(120.593189,36.136978), "客服中心", mouseoverTxt);
+
+    mp.addOverlay(myCompOverlay);
+
   },
   methods:{
       open5:function(val) {
         var This = this;
         this.$alert('<img style="width: 47rem;height: auto;" src="'+This.dt+'" />', "游览区地图", {
+          dangerouslyUseHTMLString: true,
+          closeOnClickModal:true,
+          center:true
+        });
+      },
+      open4:function(val) {
+        var This = this;
+        this.$alert('<div style="width: 47rem;height:30rem;border:#ccc solid 1px;font-size:12px" id="map"></div>', "地图", {
           dangerouslyUseHTMLString: true,
           closeOnClickModal:true,
           center:true

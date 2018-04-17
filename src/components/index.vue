@@ -14,17 +14,20 @@
                  :playsinline="true"
                  customEventName="customstatechangedeventname"
 
-                 @play="onPlayerPlay($event)"
-                 @pause="onPlayerPause($event)"
-                 @ended="onPlayerEnded($event)"
-                 @waiting="onPlayerWaiting($event)"
-                 @playing="onPlayerPlaying($event)"
-                 @loadeddata="onPlayerLoadeddata($event)"
-                 @timeupdate="onPlayerTimeupdate($event)"
-                 @canplay="onPlayerCanplay($event)"
-                 @canplaythrough="onPlayerCanplaythrough($event)"
-                 @statechanged="playerStateChanged($event)"
-                 @ready="playerReadied">
+                >
+                 <!-- 
+                   @play="onPlayerPlay($event)"
+                    @pause="onPlayerPause($event)"
+                    @ended="onPlayerEnded($event)"
+                    @waiting="onPlayerWaiting($event)"
+                    @playing="onPlayerPlaying($event)"
+                    @loadeddata="onPlayerLoadeddata($event)"
+                    @timeupdate="onPlayerTimeupdate($event)"
+                    @canplay="onPlayerCanplay($event)"
+                    @canplaythrough="onPlayerCanplaythrough($event)"
+                    @statechanged="playerStateChanged($event)"
+                    @ready="playerReadied"
+                  -->
          </video-player>
       </div>
     <div class="list2">    
@@ -33,7 +36,7 @@
         <li><router-link to="/secondLevel"><p>{{ $t("message.changyoutitle") }}</p></router-link></li>
         <li><router-link to="/secondXianshang"><p>{{ $t("message.xianshangtitle") }}</p></router-link></li>
         <li><router-link to="/secondGanzhi"><p>{{ $t("message.ganzhititle") }}</p></router-link></li>
-        <li><router-link to="/secondZhuanti"><p>{{ $t("message.zhuantititle") }}</p></router-link></li>
+        <li><router-link :to="{path:'/secondZhuanti',query:{id:$t('message.zhuantititle')}}"><p>{{ $t("message.zhuantititle") }}</p></router-link></li>
       </ul>
     </div>
   </div>
@@ -51,12 +54,13 @@ export default {
       msg: 'Welcome to Your Vue.js App', 
        playerOptions: {
           // videojs options
+          autoplay: true,
           muted: true,
           language: 'en',
           playbackRates: [0.7, 1.0, 1.5, 2.0],
           sources: [{
             type: "video/webm",
-            src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+            src: require('../assets/img/huanbao.mp4')//"https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"//require
           }],
           poster: "/static/images/author.jpg",
       }
@@ -119,7 +123,7 @@ export default {
 .list2{width:96rem;height: 12rem; position: absolute;
 bottom: 0;background: url(../assets/xian.png) no-repeat;background-position:0 70%;background-size: 100%;}
 .list2 ul{width:50rem;height: 8rem;margin: 0 auto;}
-.list2 ul li{width:8rem;height: 8rem;float: left;text-align: center;line-height: 6rem;font-size: 1.5rem;
+.list2 ul li{width:8rem;height: 8rem;float: left;text-align: center;line-height: 6rem;font-size: 1.4rem;
 background: url(../assets/index-tb.png) no-repeat;background-size: 100% 100%;margin-left: 1.66rem}
  .list2 ul li p{width:8rem;height: 8rem;line-height: 8rem;color: #fbd8a1;
  text-shadow:0 0 0.2em #000,

@@ -10,6 +10,7 @@
             <el-col :span="24"><router-link :to="{path:'/threeTu',query:{id:$t('message.changyou9')}}"><div class="grid-content bg-purple-dark">{{ $t("message.changyou9") }}</div></router-link></el-col>
             <el-col :span="24"><router-link :to="{path:'/threeTu',query:{id:$t('message.changyou10')}}"><div class="grid-content bg-purple-dark">{{ $t("message.changyou10") }}</div></router-link></el-col>
             <el-col :span="24"><router-link :to="{path:'/threeTu',query:{id:$t('message.changyou11')}}"><div class="grid-content bg-purple-dark">{{ $t("message.changyou11") }}</div></router-link></el-col>
+            <el-col :span="24"><div class="grid-content bg-purple-dark" @click="open5">{{ $t("message.guanwang") }}</div></el-col>
           </el-row>
        </div>
      </div>
@@ -35,7 +36,14 @@ export default {
      
     },
   methods: {
-    
+    open5:function(val) {
+        var This = this;
+        this.$alert('<div style="width: 47rem;height:30rem;"><iframe src="http://www.qdlaoshan.cn" style="width: 47rem;height:30rem;"></iframe></div>', "崂山官网", {
+          dangerouslyUseHTMLString: true,
+          closeOnClickModal:true,
+          center:true
+        });
+      },
     }
 }
 </script>
@@ -44,11 +52,11 @@ export default {
 <style scoped>
 .kuaijie{ 
       position: absolute;
-    top: 45%;
+    top: 41%;
     left: 0%;
     transform: translate(-0%, -50%);
   width: 9rem;
-    height: 23rem;
+    height: 25.5rem;
     background: url(../assets/kuaijie-bj.png);
     background-size: 100% 100%;}
 .kuaijie>div{ padding-top: 3rem;

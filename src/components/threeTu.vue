@@ -120,7 +120,7 @@ position: relative;margin-bottom: 1rem;}
 .video .box02 ul p{width:16rem;height: 2rem;line-height: 2rem;text-align: center; position: absolute;bottom: 0;
 left: 50%;
 transform: translate(-50%, -0%);
-font-size: 0.8rem;background: #000;color: #fff}
+font-size: 0.8rem;background: #000;color: #fff;font-family:"Microsoft YaHei",'微软雅黑';}
 
 
 
