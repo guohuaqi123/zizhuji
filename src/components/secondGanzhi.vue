@@ -18,11 +18,13 @@
            <div class="content-box02"><img  @click="open5('1')" src="../assets/ganzhilaoshan/ganzhi-ditu.png"> </div>
            <div class="content-box03">
              <ul>
-              <li v-for="(list,index) in only"  @click="open4('1')">
-                  <p>{{list}}</p>
-              </li>
+             
               <li v-for="(list,index) in lists">
                  <router-link :to="{path:'/threeTu',query:{id:list}}">
+                 <p>{{list}}</p></router-link>
+              </li>
+               <li v-for="(list,index) in only">
+                   <router-link :to="{path:'/baidu',query:{id:list}}">
                  <p>{{list}}</p></router-link>
               </li>
              
@@ -57,14 +59,14 @@ export default {
   },
    computed: {
     only: function () {
-      return [this.$t("message.ganzhi0")]
+      return [this.$t("message.ganzhi4")]
       },
     lists: function () {
       return [
+      this.$t("message.ganzhi0"),
       this.$t("message.ganzhi1"),
       this.$t("message.ganzhi2"),
       this.$t("message.ganzhi3"),
-      this.$t("message.ganzhi4"),
       this.$t("message.ganzhi5")]
       }
    },

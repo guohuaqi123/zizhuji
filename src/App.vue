@@ -5,7 +5,6 @@
         <swiper :options="swiperOption" ref="mySwiper">
     <!-- slides -->
           <swiper-slide><img src="./assets/bj.jpg" /></swiper-slide>
-          <swiper-slide><img src="./assets/bg1.jpg" /></swiper-slide>
           <swiper-slide><img src="./assets/bg2.jpg" /></swiper-slide>
           <swiper-slide><img src="./assets/bg3.jpg" /></swiper-slide>
         
@@ -37,8 +36,10 @@ export default {
       swiperOption: {
           spaceBetween: 30,
           centeredSlides: true,
+          effect : 'fade',
+          loop:true,
           autoplay: {
-            delay: 2500,
+            delay: 10000,
             disableOnInteraction: false,
           },
           pagination: {
@@ -152,9 +153,9 @@ export default {
     transform: translate(-50%, -50%);
 }
 .el-message-box{width: 50rem}
-.tttt{position: fixed;height: 100%;width: 100%}
+.tttt{position: fixed;height: 100%;width: 100%;z-index: -1;}
 .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide {
     height: 100%;
 }
-.tttt img{width: 100%;height: auto}
+.tttt img{width: 100%;height: auto;}
 </style>

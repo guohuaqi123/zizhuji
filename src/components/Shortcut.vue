@@ -10,7 +10,7 @@
             <el-col :span="24"><router-link :to="{path:'/threeTu',query:{id:$t('message.changyou9')}}"><div class="grid-content bg-purple-dark">{{ $t("message.changyou9") }}</div></router-link></el-col>
             <el-col :span="24"><router-link :to="{path:'/threeTu',query:{id:$t('message.changyou10')}}"><div class="grid-content bg-purple-dark">{{ $t("message.changyou10") }}</div></router-link></el-col>
             <el-col :span="24"><router-link :to="{path:'/threeTu',query:{id:$t('message.changyou11')}}"><div class="grid-content bg-purple-dark">{{ $t("message.changyou11") }}</div></router-link></el-col>
-            <el-col :span="24"><div class="grid-content bg-purple-dark" @click="open5">{{ $t("message.guanwang") }}</div></el-col>
+            <el-col :span="24"><router-link :to="{path:'/guanwang',query:{id:$t('message.guanwang')}}"><div class="grid-content bg-purple-dark" >{{ $t("message.guanwang") }}</div></router-link></el-col>
           </el-row>
        </div>
      </div>

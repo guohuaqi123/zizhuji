@@ -12,6 +12,8 @@ import threeTu from '@/components/threeTu'
 import threeYoulan from '@/components/threeYoulan'
 import FourLevelPage from '@/components/FourLevelPage'
 import FourLevelPageImg from '@/components/FourLevelPageImg'
+import guanwang from '@/components/guanwang'
+import baidu from '@/components/baidu'
 import ElementUI from 'element-ui'
 
 import $ from "jquery";
@@ -79,6 +81,14 @@ export default new Router({
             path: '/FourLevelPageImg', //四级页img
             name: 'FourLevelPageImg',
             component: FourLevelPageImg
+        }, {
+            path: '/guanwang', //崂山官网
+            name: 'guanwang',
+            component: guanwang
+        }, {
+            path: '/baidu', //崂山官网
+            name: 'baidu',
+            component: baidu
         },
     ]
 })

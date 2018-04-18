@@ -14,10 +14,13 @@
             <img src="../assets/threeth/box01.png" />      
           </div>
           <div class="box02">
-            <div>
-              <el-tabs type="border-card">
-                <el-tab-pane :label='$t("message.laoshanimg1")'>
-                  <div class="haid">
+            <div class="Lbox">
+              <div @click="hiddenFun">{{ $t("message.laoshanimg1") }}</div>
+              <div @click="hiddenFun1">{{ $t("message.laoshanimg2") }}</div>
+            </div>
+            <div class="Rbox">
+             
+                  <div class="haid" v-if="ok" >
                      <ul>
                         <el-row :gutter="20">
                         <el-col :span="6" v-for="(list,index) in data1" :class="[{no:only==index},{no:only2==index}]">
@@ -27,22 +30,27 @@
                         </el-col>
                         </el-row>
                       </ul>
-                    </div>
-                </el-tab-pane>
-                <el-tab-pane :label='$t("message.laoshanimg2")'>
-                  <div class="haid">
-                    <ul>
-                        <el-row :gutter="20">
-                        <el-col :span="6" v-for="(list,index) in data2" :class="[{no:only==index},{no:only2==index}]">
+                  </div>
+                  <div class="haid" v-else>
+                    <ul class="tupian">
+                        <swiper :options="swiperOption" ref="mySwiper">
+                          <swiper-slide v-for="(list,index) in data2"><img :src="msgurl.getimg+list.smallPic" /></swiper-slide>
+                          <!-- <swiper-slide><img src="./assets/bg1.jpg" /></swiper-slide>
+                          <swiper-slide><img src="./assets/bg2.jpg" /></swiper-slide>
+                          <swiper-slide><img src="./assets/bg3.jpg" /></swiper-slide>-->
+                          <div class="swiper-pagination"  slot="pagination"></div>
+                          <div class="swiper-scrollbar"   slot="scrollbar"></div> 
+                        </swiper>
+                        <!-- <el-row :gutter="20">
+                        <el-col :span="6" v-for="(list,index) in data2">
                           
                               <img :src="msgurl.getimg+list.smallPic" @click="open5(list.smallPic)"/><p>{{list.title}}</p>
                           
                         </el-col>
-                        </el-row>
+                        </el-row> -->
                     </ul>
                   </div>
-                </el-tab-pane>
-              </el-tabs>
+                
              
             </div>
           </div> 
@@ -63,6 +71,27 @@ export default {
       data2:[],
       only:2,
       msg: 'Welcome to Your Vue.js App',
+      ok:true,
+      swiperOption: {
+          spaceBetween: 30,
+          centeredSlides: true,
+          effect : 'coverflow',
+          slidesPerView: 3,
+          centeredSlides: true,
+          loop:true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+        }
       }
   },
   computed: {
@@ -113,6 +142,12 @@ export default {
           center:true
         });
       },
+    hiddenFun:function(){    
+         this.ok=true;
+    },
+    hiddenFun1:function(){
+         this.ok=false;     
+    }
   }
 }
 </script>
@@ -150,10 +185,26 @@ export default {
     font-size: 1.5rem;
     font-weight: bold;
     }
-.video .box02{width: 74rem;height: 26rem;position: relative}
-.video .box02>div{width:70rem;height: 22rem;margin: 1rem 2rem;overflow: hidden}
-.haid{width:67rem;height: 18rem;overflow: hidden}
-.haid ul{width:67rem;height: 18rem;    padding-right: 18px;
+.video .box02{width: 74rem;height: 23rem;position: relative}
+.video .box02 .Lbox{width: 4rem;height: 23rem;float: left;}
+.video .box02 .Lbox>div{
+  text-align: center;
+  margin-left: 1rem;
+  height: 10rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+    background: url(../assets/kuaijie-bj.png);
+    background-size:100% 100% ;
+    width: 3rem;
+    font-size: 1.3rem;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: tb-lr;
+    writing-mode: tb-lr;}
+.video .box02 .Rbox{width:70rem;height: 23rem;margin: 0rem 0rem;overflow: hidden;float:right}
+.haid{width:67rem;height: 23rem;margin-left: 1.5rem;overflow: hidden}
+.haid ul{width:67rem;height: 23rem;    padding-right: 18px;
 margin-left: 9px;overflow-y: scroll;
 overflow-x: hidden;}
 .video ul .el-col{text-align: center;line-height: 6rem;font-size: 1rem;
@@ -165,6 +216,11 @@ transform: translate(-50%, -0%);
 font-size: 0.8rem;background: #000;color: #fff;font-family:"Microsoft YaHei",'微软雅黑';}
 
 
+.video .box02 .tupian{height: 18rem;width: 100%; padding-top: 5rem}
+.video .box02 .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide {
+    height: 100%;
+}
+.video .box02 .tupian img{width: 100%;height: auto;}
 
 
 

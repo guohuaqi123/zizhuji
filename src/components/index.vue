@@ -60,7 +60,7 @@ export default {
           playbackRates: [0.7, 1.0, 1.5, 2.0],
           sources: [{
             type: "video/webm",
-            src: require('../assets/img/huanbao.mp4')//"https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"//require
+            src: require('../assets/img/中国崂山.webm')//"https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"//require
           }],
           poster: "/static/images/author.jpg",
       }
