@@ -9,7 +9,7 @@ module.exports = {
         renwen3: '景区门票',
 
         ganzhititle: '崂山攻略',
-        ganzhi0: '游览区简介',
+        ganzhi0: '景区游览区',
         ganzhi1: '经典线路',
         ganzhi2: '景区看点',
         ganzhi3: '必游景点',

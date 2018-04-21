@@ -15,12 +15,25 @@
           </div>
           <div class="box02">
             <div class="Lbox">
-              <div @click="hiddenFun">{{ $t("message.laoshanimg1") }}</div>
-              <div @click="hiddenFun1">{{ $t("message.laoshanimg2") }}</div>
+              <div @click="hiddenFun">{{ $t("message.laoshanimg2") }}</div>
+              <div @click="hiddenFun1">{{ $t("message.laoshanimg1") }}</div>
             </div>
             <div class="Rbox">
              
                   <div class="haid" v-if="ok" >
+                    <ul class="tupian">
+                        <swiper :options="swiperOption" ref="mySwiper">
+                          <swiper-slide v-for="(list,index) in data2">
+                            <img :src="msgurl.getimg+list.smallPic" />
+                            <p class="p1">{{list.title}}</p>
+                          </swiper-slide>
+                        
+                         
+                        </swiper>
+                    </ul>
+                    
+                  </div>
+                  <div class="haid" v-else>
                      <ul>
                         <el-row :gutter="20">
                         <el-col :span="6" v-for="(list,index) in data1" :class="[{no:only==index},{no:only2==index}]">
@@ -30,25 +43,6 @@
                         </el-col>
                         </el-row>
                       </ul>
-                  </div>
-                  <div class="haid" v-else>
-                    <ul class="tupian">
-                        <swiper :options="swiperOption" ref="mySwiper">
-                          <swiper-slide v-for="(list,index) in data2"><img :src="msgurl.getimg+list.smallPic" /></swiper-slide>
-                          <!-- <swiper-slide><img src="./assets/bg1.jpg" /></swiper-slide>
-                          <swiper-slide><img src="./assets/bg2.jpg" /></swiper-slide>
-                          <swiper-slide><img src="./assets/bg3.jpg" /></swiper-slide>-->
-                          <div class="swiper-pagination"  slot="pagination"></div>
-                          <div class="swiper-scrollbar"   slot="scrollbar"></div> 
-                        </swiper>
-                        <!-- <el-row :gutter="20">
-                        <el-col :span="6" v-for="(list,index) in data2">
-                          
-                              <img :src="msgurl.getimg+list.smallPic" @click="open5(list.smallPic)"/><p>{{list.title}}</p>
-                          
-                        </el-col>
-                        </el-row> -->
-                    </ul>
                   </div>
                 
              
@@ -76,9 +70,10 @@ export default {
           spaceBetween: 30,
           centeredSlides: true,
           effect : 'coverflow',
-          slidesPerView: 3,
+          slidesPerView: 2,
           centeredSlides: true,
           loop:true,
+          zoom : true,
           autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -214,9 +209,13 @@ position: relative;margin-bottom: 1rem;}
 left: 50%;
 transform: translate(-50%, -0%);
 font-size: 0.8rem;background: #000;color: #fff;font-family:"Microsoft YaHei",'微软雅黑';}
+.video .box02 ul .p1{width:100%;height: 2rem;line-height: 2rem;text-align: center; position: absolute;bottom: 0;
+left: 50%;
+transform: translate(-50%, -0%);
+font-size: 0.9rem;color: #fff;font-family:"Microsoft YaHei",'微软雅黑';background: #000;background: rgba(0, 0, 0, 0.6);}
 
 
-.video .box02 .tupian{height: 18rem;width: 100%; padding-top: 5rem}
+.video .box02 .tupian{height: 23rem;width: 100%; }
 .video .box02 .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide {
     height: 100%;
 }

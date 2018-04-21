@@ -7,10 +7,8 @@
           <swiper-slide><img src="./assets/bj.jpg" /></swiper-slide>
           <swiper-slide><img src="./assets/bg2.jpg" /></swiper-slide>
           <swiper-slide><img src="./assets/bg3.jpg" /></swiper-slide>
-        
+          <swiper-slide><img src="./assets/bg1.jpg" /></swiper-slide>      
           <!-- Optional controls -->
-          <div class="swiper-pagination"  slot="pagination"></div>
-          <div class="swiper-scrollbar"   slot="scrollbar"></div>
         </swiper>
 
       </div>
@@ -158,4 +156,7 @@ export default {
     height: 100%;
 }
 .tttt img{width: 100%;height: auto;}
+
+.el-message-box{background: url(./assets/alert.png);background-size: 100% 100%;border-radius:none;
+border: none;}
 </style>

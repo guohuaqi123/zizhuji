@@ -11,33 +11,14 @@
     </div>
     <div class="video" >     
       <div class="box01">
-        <div>
-          <img src="../assets/Four/bt-bg1.png">
-          <p>{{datas.title}}</p> 
-          <img class="rimg" src="../assets/Four/bt-bg3.png">
-           
-        </div>
-         <!-- <img src="../assets/Four/bt-bg.png" /> -->
+        <img src="../assets/Four/bt-bg.png" />
+        <p>{{datas.title}}</p>
       </div>
-      <div class="box02">
-        <div class="box02com">
-          <div class="box02com1">
-            <!-- <div style="float:left; clear: both;" align="center">
-        <img src="images/bkjj.jpg" width="120" alt="" hspace="8"><br /> 图像标题
-    </div> -->
-            <div class="tp" style="clear: both;" align="center"><img :src="urltp" @error='imgerror' /></div>
-            <!-- {{datas.content}} -->
-           <div><p v-html="datas.content" ></p></div> 
-          </div>
-        </div>
-      </div> 
-       <div class="box03">
-       
-      </div> 
-      
-    </div>
      
-    <back></back>
+     
+    </div>
+      <back></back>
+   
   </div>
 </template>
 
@@ -46,27 +27,23 @@ export default {
   name: 'HelloWorld',
   data () {
     return {        
-      lists:[
-            {
-              "com":require('../assets/threeth/01.png')
-             },{
-              "com":require('../assets/threeth/02.png')                 
-             },{
-              "com":require('../assets/threeth/03.png')                        
-             },{
-              "com":require('../assets/threeth/04.png')                        
-             },{
-              "com":require('../assets/threeth/05.png')                        
-             },{
-              "com":require('../assets/threeth/06.png')                        
-             },{
-              "com":require('../assets/threeth/07.png')                        
-             }],
       only:3,
       only2:7,
       datas: 'Welcome to Your Vue.js App',
       urltp:'',
-      imgurl:'121'
+      playerOptions: {
+          // videojs options
+          muted: true,
+          loop: true,
+          fluid: true,
+          language: 'en',
+          playbackRates: [0.7, 1.0, 1.5, 2.0],
+          sources: [{
+            type: "video/webm",
+            src: '',
+          }],
+          poster: "/static/images/author.jpg",
+      }
     }
   },
   props:['msgurl'],
@@ -86,8 +63,8 @@ export default {
                 success: function(data) {
                     console.log(data);
                     This.datas= data[0];
-                    This.imgurl=data[0].bigPic;
                     This.urltp=This.msgurl.getimg+data[0].bigPic;
+                    This.playerOptions.sources[0].src=This.msgurl.getimg+data[0].bigPic
                     //console.log(This.Numbers[This.message]);
                     //This.Nber = This.Numbers.slice(0, 12);
                     //This.pages = data.length
@@ -98,14 +75,6 @@ export default {
     zhankaiFun:function(index){
           this.zhangkai = index;
     },
-    imgerror:function(event){
-      //alert('1:'+event.target.style.display);
-      //alert('2:'+this.imgurl);
-      if(this.imgurl==''){
-        event.target.style.display='none'
-      }
-      
-    }
   }
 }
 </script>
@@ -144,35 +113,39 @@ export default {
    
       }
 
-.video .box01{width: 74rem;height: 5rem;position: relative;
-background: url(../assets/Four/bg01.png) no-repeat center;background-size: 100% 100%;
+.video .box01{width: 74rem;height: 33rem;position: relative;
+background: url(../assets/alert.png) no-repeat center;background-size: 100% 100%;
 }
-.video .box01>div{
+.video .box01 img{width: 18rem;
     height: 3rem;
-    line-height: 3rem;
-     font-size: 1.2rem;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-   }
-.video .box01>div img{float: left;height: 3rem}
-.video .box01>div .rimg{float: right;height: 3rem}
-.video .box01>div p{
-  float: left;
+    transform: translate(-50%, -50%);}
+.video .box01 p{width: 18rem;
 text-align: center;
 line-height: 3rem;color: #82705d;
     font-size: 1.2rem;
     font-weight: bold;
     height: 3rem;
-     background: url(../assets/Four/bt-bg2.png) center;background-size:auto 100% ;
-    }
-.video .box02{width: 74rem;height: 22rem;position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);}
+.video .box02{width: 74rem;height: 19rem;position: relative;padding-top: 3rem;
 background: url(../assets/Four/bgz.png) no-repeat center;background-size: 100% 100%;}
-.video .box02 .box02com{width: 66rem;height: 22rem;margin: 0 4rem;overflow: hidden;}
+.video .box02 .box02com{    width: 23rem;
+    height: 13rem;
+    float: left;
+    margin-left: 5rem;
+   }
+    .box02text{float:right; margin-right: 5rem; width:37rem;height: 19rem;}
+     .box02text>div{ width:37rem;line-height: 2rem;font-size: 1rem;overflow-y: scroll;
+    overflow-x: hidden;font-family:"Microsoft YaHei",'微软雅黑';height: 19rem;}
 .video .box02 .box02com1{width: 66rem;height: 22rem;overflow: hidden;
-overflow-y: scroll;overflow-x: hidden;font-family:"Microsoft YaHei",'微软雅黑';}
+overflow-y: scroll;overflow-x: hidden;padding-right: 18px;padding-left: 9px;font-family:"Microsoft YaHei",'微软雅黑';}
 .video .box02 .box02com1 p{line-height: 1.6rem;font-size: 0.9rem}
 .video .box02 .box02com1 img{width: 50%}
 

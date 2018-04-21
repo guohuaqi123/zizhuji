@@ -29,7 +29,8 @@
                           </div>
                         </div>
                         <div class="content-box04" v-else-if="message==1">
-                          <div>
+                         
+                          <div style="line-height:2rem">
                                     &nbsp;&nbsp; &nbsp;&nbsp; 崂山，位于青岛市东部的崂山区，距市中心40余公里。它耸立于黄海之滨，气势雄伟，山海紧错，岚光变幻，云气离合，是闻名遐迩的海上名山，国务院确定的第一
                                     批国家重点风景名胜区之一。<br/>
 
@@ -97,16 +98,15 @@
                                     活动的国家重点名胜区域，屹立于黄海之滨，为中华大地增添风采。<br/>
 
                           </div>
+                             
                         </div>
                         <div class="content-box04" v-else-if="message==3">
-                          <div>
-                             <img src="../../assets/20170424014322_58fce7bae041c.jpg"/>
-                             <br/>
+                           <div style="line-height:2rem">
                              <b> 一、景区门票价格</b> <br/>
 
                               （一）旺季（4月1日至10月31日） <br/>
 
-                              巨峰 <br/>
+                              <b>巨峰</b> <br/>
 
                               门票价格：120元/人（含景区进山门票80、观光车40） <br/>
 
@@ -114,7 +114,7 @@
 
                               学生票：80元/人（含景区进山门票40、观光车40） <br/>
 
-                              南线（流青—太清—华严—仰口）<br/>
+                              <b>南线（流青—太清—华严—仰口）</b><br/>
 
                               门票价格：130元/人（含景区进山门票90、观光车40）<br/> 
 
@@ -122,7 +122,7 @@
 
                               学生票：85元/人（含景区进山门票45、观光车40） <br/>
 
-                              九水<br/>
+                              <b>九水</b><br/>
 
                               门票价格：95元/人（含景区进山门票65、观光车30） <br/>
 
@@ -132,7 +132,7 @@
 
                               （二）淡季（11月1日至次年3月31日） <br/>
 
-                              巨峰 <br/>
+                              <b>巨峰</b> <br/>
 
                               门票价格：90元/人（含景区进山门票50、观光车40） <br/>
 
@@ -140,7 +140,7 @@
 
                               学生票：65元/人（含景区进山门票25、观光车40） <br/>
 
-                              南线（流青—太清—华严—仰口） <br/>
+                              <b>南线（流青—太清—华严—仰口）</b> <br/>
 
                               门票价格：100元/人（含景区进山门票60、观光车40） <br/>
 
@@ -148,7 +148,7 @@
 
                               学生票：70元/人（含景区进山门票30、观光车40） <br/>
 
-                              九水 <br/>
+                              <b>九水</b> <br/>
 
                               门票价格：70元/人（含景区进山门票40、观光车30） <br/>
 
@@ -158,7 +158,7 @@
 
                               华楼游览区仍常年执行10元/人的门票价格 <br/>
 
-                              （三）索道 <br/>
+                              <b>（三）索道</b> <br/>
 
                               巨峰索道价格：40元/人（单程票） <br/>
 
@@ -166,35 +166,35 @@
 
                               仰口索道价格：35元/人（单程票） 60元/人（双程票）<br/>
 
-                              二、崂山风景区特殊群体优惠政策的通知 <br/>
+                              <b>二、崂山风景区特殊群体优惠政策的通知</b> <br/>
 
-                              （一）60周岁以上（含60周岁）老年人持有效证件享受景区门票免费优惠，观光车票无优惠。 有效证件为：身份证、户口薄、
+                               &nbsp;&nbsp; &nbsp;&nbsp;（一）60周岁以上（含60周岁）老年人持有效证件享受景区门票免费优惠，观光车票无优惠。 有效证件为：身份证、户口薄、
                               离（退）休证、老年人优待证、新版社保卡（含个人照片及身份证信息）、护照、驾照、港澳台同胞通行证（周岁按照公历的年、
                               月、日计算，从周岁生日的第二天算起）。 <br/>
 
-                              （二）残疾人凭残疾人证享受景区门票和停车免费优惠，观光车票无优惠。重度残疾人（重度残疾人是指残疾证中残疾程度为一级、
+                               &nbsp;&nbsp; &nbsp;&nbsp;（二）残疾人凭残疾人证享受景区门票和停车免费优惠，观光车票无优惠。重度残疾人（重度残疾人是指残疾证中残疾程度为一级、
                               二级的残疾人）和视力残疾人的一名陪护人员享受同等优惠。 <br/>
 
-                              （三）中国人民解放军和武警部队现役军人持军官证、文职干部证、士兵证，军队院校学员持学员证，退伍红军老战士持退伍证，
+                               &nbsp;&nbsp; &nbsp;&nbsp;（三）中国人民解放军和武警部队现役军人持军官证、文职干部证、士兵证，军队院校学员持学员证，退伍红军老战士持退伍证，
                               残疾军人持残疾军人证，军队离退休干部持军队离退休干部证等有效证件享受景区门票免费，观光车票无优惠。<br/> 
 
-                              （四）6周岁（含6周岁）以下或身高1.2米（含1.2米）以下的儿童享受景区门票、观光车票、索道票免费优惠；
+                               &nbsp;&nbsp; &nbsp;&nbsp;（四）6周岁（含6周岁）以下或身高1.2米（含1.2米）以下的儿童享受景区门票、观光车票、索道票免费优惠；
                               身高1.2—1.4米的儿童享受景区门票、观光车票半价优惠。 <br/>
 
-                              （五）6周岁（不含6周岁）～18周岁（含18周岁）未成年人持有效证件、全日制大学本科及以下学历学生持有效学生证享受景
+                               &nbsp;&nbsp; &nbsp;&nbsp;（五）6周岁（不含6周岁）～18周岁（含18周岁）未成年人持有效证件、全日制大学本科及以下学历学生持有效学生证享受景
                               区门票半价优惠，观光车票无优惠。 有效证件为：身份证、户口薄、新版社保卡（含个人照片及身份证信息）、护照、港澳台同
                               胞通行证或学生证等。 <br/>
 
-                              （六）具有青岛市常住户口且享受政府定期抚恤补助的重点优抚对象,包括烈士遗属、因公牺牲军人遗属、病故军人遗属、
+                               &nbsp;&nbsp; &nbsp;&nbsp;（六）具有青岛市常住户口且享受政府定期抚恤补助的重点优抚对象,包括烈士遗属、因公牺牲军人遗属、病故军人遗属、
                               带病回乡退伍军人、参战退役人员、参加核试验军队退役人员凭有效证件享受景区门票半价优惠，观光车票无优惠。 有效证件为：
                               烈士遗属凭《山东省烈士遗属定期抚恤证》, 因公牺牲军人遗属凭《山东省因公牺牲军人遗属定期抚恤证》, 病故军人遗属凭
                               《山东省病故军人遗属定期抚恤证》, 带病回乡退伍军人凭《山东省带病回乡退伍军人生活补助证》,参战退役人员凭
                               《山东省参战退役人员生活补助证》, 参加核试验军队退役人员凭《山东省参加核试验军队退役人员生活补助证》。 <br/>
 
-                              （七）新闻记者凭国家新闻出版总署颁发的记者证享受景区门票免费优惠，观光车票无优惠。 <br/>
+                               &nbsp;&nbsp; &nbsp;&nbsp;（七）新闻记者凭国家新闻出版总署颁发的记者证享受景区门票免费优惠，观光车票无优惠。 <br/>
 
-                              （八）带团导游凭有效导游证享受景区门票、观光车票免费优惠。 <br/>
-                          </div>
+                               &nbsp;&nbsp; &nbsp;&nbsp;（八）带团导游凭有效导游证享受景区门票、观光车票免费优惠。 <br/>
+                          </div> 
                         </div>
                         <!-- <mycomponent></mycomponent> -->
                   </div>
@@ -210,12 +210,13 @@ export default {
     return {          
       zhangkai:0,
       only:3,
-      //msg:["人文古迹","名人文苑","刻石碑记","崂山传说"],
-      // lists:[["本籍人物","记山人物","侨居人物","著名道士","著名僧人","游山名人","著名道士","著名僧人","游山名人","著名道士","著名僧人","游山名人"],
-      //  ["本籍人物","记山人物","侨居人物","著名道士","著名僧人","游山名人"],
-      //  ["刻石","碑记"],
-      //  ["崂山传说"]
-      // ],  
+       swiperOption: {
+              direction: 'vertical',  
+              slidesPerView: 'auto', 
+              freeMode: true,
+            },
+      //mousewheel: true,
+        
       lists:'', 
       pages:0,
       Numbers:[],
@@ -226,7 +227,12 @@ export default {
    computed: {
      msg: function () {
       return [this.$t("message.renwen0"),this.$t("message.renwen1"),this.$t("message.renwen2"),this.$t("message.renwen3")]
-      }
+      },
+    // swiperOption:function(){
+    //   return {
+                    
+    //             }
+    // },
    },
    props: ['message','msgurl'],
   mounted() {
@@ -254,6 +260,21 @@ export default {
                     This.pages = data.length
                 }
             })
+           
+                 
+                    
+
+
+
+
+           
+
+  },
+  beforeUpdate() {
+  
+            // $("#content-box041").overscroll();
+                    
+
   },
   methods:{
     zhankaiFun:function(index){
@@ -276,6 +297,7 @@ export default {
 
   }
 }
+ //$(".content-box04").overscroll();
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -367,8 +389,18 @@ overflow-x: auto;padding:1rem;padding-bottom: 0rem;overflow: hidden;}
 .video .special .bg .content .content-box03{ width: 36rem;height: 2rem;display: flex;}
 .content-box03 .el-pagination{margin: 0 auto;align-items: center;justify-content:center;}
 .content-box04{width: 34rem;height: 17rem;overflow:hidden;margin: 0 auto;font-family:"Microsoft YaHei",'微软雅黑';}
-.content-box04>div{width: 34rem;height: 17rem;overflow-y: scroll;overflow-x: hidden;margin: 0 auto;padding-right: 17px;}
-
+ .content-box04>div{width: 34rem;height: 17rem;overflow-y: scroll;overflow-x: hidden;margin: 0 auto;} 
+.swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      font-size: 18px;
+      height: auto;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 30px;
+    }
 .hede{width: 34rem;height: 15rem;}
 
 

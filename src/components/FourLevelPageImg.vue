@@ -38,6 +38,9 @@
                  @ready="playerReadied" -->
          </video-player>
         </div>
+        <div class="box02text" >
+          <div v-html="datas.content"></div>
+        </div>
       </div> 
        <div class="box03">
        
@@ -61,6 +64,8 @@ export default {
       playerOptions: {
           // videojs options
           muted: true,
+          loop: true,
+          fluid: true,
           language: 'en',
           playbackRates: [0.7, 1.0, 1.5, 2.0],
           sources: [{
@@ -163,8 +168,12 @@ line-height: 3rem;color: #82705d;
 background: url(../assets/Four/bgz.png) no-repeat center;background-size: 100% 100%;}
 .video .box02 .box02com{    width: 23rem;
     height: 13rem;
-    margin: 0rem 25.5rem;
-    overflow: hidden;}
+    float: left;
+    margin-left: 5rem;
+   }
+    .box02text{float:right; margin-right: 5rem; width:37rem;height: 19rem;}
+     .box02text>div{ width:37rem;line-height: 2rem;font-size: 1rem;overflow-y: scroll;
+    overflow-x: hidden;font-family:"Microsoft YaHei",'微软雅黑';height: 19rem;}
 .video .box02 .box02com1{width: 66rem;height: 22rem;overflow: hidden;
 overflow-y: scroll;overflow-x: hidden;padding-right: 18px;padding-left: 9px;font-family:"Microsoft YaHei",'微软雅黑';}
 .video .box02 .box02com1 p{line-height: 1.6rem;font-size: 0.9rem}

@@ -41,9 +41,12 @@ export default {
   position: absolute;
           left: 50%;
           transform: translate(-50%, -0%);}
-.logo>div{float: left;width: 15.6rem;height: 7rem;
+.logo>div{    width: 15.6rem;
+    height: 7rem;
+    display: table-cell;
+    text-align: center;
           }
-.logo>div img{float: left;width: auto;height: 3rem;
+.logo>div img{width: auto;height: 3rem;
 margin-top: 2rem;
           }
 

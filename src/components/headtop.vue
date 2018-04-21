@@ -2,9 +2,9 @@
   <div class="hello">
      <!-- <img src="../assets/bj.jpg">  -->
     <div class="logo">    
-      <div><img  class="logoImg" src="../assets/logo.png"></div>
+      <div><img  class="logoImg" src="../assets/logo.gif"></div>
     </div>
-    <div class="list">
+    <!-- <div class="list">
        <el-dropdown trigger="click">
           <span class="el-dropdown-link qie-li">
             {{xianshi}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -16,14 +16,8 @@
             
           </el-dropdown-menu>
         </el-dropdown>
-      <!-- <ul>
-        <router-link to="/">
-        <li v-for="(list,index) in zhonglei" 
-         :class="{ yuzhong:qiehuan == index}" 
-         @click="qiehuanFun(index),yuyan(index)">{{list}}</li>
-       </router-link>
-      </ul> -->
-    </div>
+    
+    </div> -->
     
     
   </div>
@@ -75,8 +69,9 @@ export default {
 .logo>div{float: left;width: 15.6rem;height: 7rem;
           }
 .logo>div .logoImg{
-float: left;width: auto;height: 7rem;
-margin-top: 0rem;
+    width: 10.4rem;
+    height: 7rem;
+    margin-left: 2.6rem;
           }
 .list{width: 5rem;
     margin: 2.5rem 3rem;

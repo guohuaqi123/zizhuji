@@ -89,7 +89,7 @@ export default {
     height: 25rem;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-right: 17px;}
+   }
  .el-row {
     margin-bottom: 20px;
    
@@ -104,15 +104,17 @@ export default {
   }
  
   .el-col .grid-content{
+    max-height: 9rem;
     width: 45%;
     position: absolute;
     top: 50%;
     right: 0rem;
     transform: translate(-0%, -50%);
     color: #000;
+    overflow: hidden;
   }
   .el-col .grid-content h2{
-   height: 2rem;
+   
     line-height: 2rem;
     font-size: 1.2rem;
   }

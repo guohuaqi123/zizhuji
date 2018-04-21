@@ -111,8 +111,7 @@ export default {
     }
 .video .box02{width: 74rem;height: 26rem;position: relative}
 .video .box02>div{width:70rem;height: 22rem;margin: 2rem;;overflow: hidden}
-.video ul{width:70rem;height: 22rem;    padding-right: 18px;
-margin-left: 9px;overflow-y: scroll;
+.video ul{width:70rem;height: 22rem;   overflow-y: scroll;
 overflow-x: hidden;}
 .video ul .el-col{text-align: center;line-height: 6rem;font-size: 1rem;
 position: relative;margin-bottom: 1rem;}

@@ -55,7 +55,10 @@ export default {
        playerOptions: {
           // videojs options
           autoplay: true,
-          muted: true,
+         // muted: true,
+          muted: false,
+          loop: true,
+          fluid: true,
           language: 'en',
           playbackRates: [0.7, 1.0, 1.5, 2.0],
           sources: [{

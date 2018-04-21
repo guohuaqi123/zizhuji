@@ -15,6 +15,7 @@ import FourLevelPageImg from '@/components/FourLevelPageImg'
 import guanwang from '@/components/guanwang'
 import baidu from '@/components/baidu'
 import ElementUI from 'element-ui'
+import Alert from '@/components/Alert'
 
 import $ from "jquery";
 //import $ from "jquery"
@@ -89,6 +90,10 @@ export default new Router({
             path: '/baidu', //崂山官网
             name: 'baidu',
             component: baidu
+        }, {
+            path: '/Alert', //弹出
+            name: 'Alert',
+            component: Alert
         },
     ]
 })
